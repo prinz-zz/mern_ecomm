@@ -5,6 +5,8 @@ import morgan from "morgan";
 import { dbConnection } from "./config/dbConnect.js";
 import authRoutes from "./routes/authRoutes.js";
 import productRoutes from "./routes/productRoutes.js";
+import catRoutes from "./routes/categoryRoutes.js";
+import brandRoutes from "./routes/brandRoutes.js";
 import { notFound, errorHandler } from "./middlewares/errorHandler.js";
 import cookieParser from "cookie-parser";
 
@@ -20,6 +22,8 @@ dbConnection();
 
 app.use("/api/user", authRoutes);
 app.use("/api/product", productRoutes);
+app.use("/api/category", catRoutes);
+app.use("/api/brand", brandRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
