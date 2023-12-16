@@ -5,7 +5,7 @@ import {
   getProduct,
   getAllProducts,
   updateProduct,
-  deleteProduct,
+  deleteProduct, 
   addToWishlist,
   ratings,
   uploadImages,

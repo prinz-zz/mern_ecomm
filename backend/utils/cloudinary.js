@@ -10,16 +10,19 @@ cloudinary.config({
 
 export const cloudinaryUploadImg = async (fileToUpload) => {
   return await new Promise((resolve) => {
-    cloudinary.uploader.upload(fileToUpload, (result) => {
-      resolve(
-        console.log("result:", result),
-        {
-          url: result.secure_url,
-        },
-        {
-          resource_type: "auto",
-        }
-        );
+    cloudinary.uploader.upload(fileToUpload, (error, result) => {
+      if (error) {
+        console.log(error);
+      }else{
+        resolve(
+          {
+            url: result.secure_url,
+          },
+          {
+            resource_type: "auto",
+          },
+          );
+      }
     });
   });
 };

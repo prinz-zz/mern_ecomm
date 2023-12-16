@@ -1,6 +1,7 @@
 import Product from "../models/productModel.js";
 import asyncHandler from "express-async-handler";
 import { validateMongoDbId } from "../utils/validateMongoDbId.js";
+import { cloudinaryUploadImg } from '../utils/cloudinary.js';
 
 //create a product
 export const createProduct = asyncHandler(async (req, res, next) => {
@@ -193,19 +194,19 @@ export const uploadImages = asyncHandler(async (req, res) => {
   validateMongoDbId(id);
 
   try {
-    const uploader = (psth) => cloudinaryUploadImg(path, "images");
+    const uploader = (path) => cloudinaryUploadImg(path, "images");
     const urls = [];
     const files = req.files;
     for (const file of files) {
       const { path } = file;
       const newPath = await uploader(path);
-      console.log(newPath);
+      console.log('NEW :',newPath);
       urls.push(newPath);
     }
 
-    const findProduct = await Product.findByIdAndUpdate(id, {
+    const findProduct = await Product?.findByIdAndUpdate(id, {
       images: urls.map(
-        (file) => {
+        (file) => { 
           return file;
         },
         { new: true }
