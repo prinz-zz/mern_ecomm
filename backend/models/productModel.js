@@ -42,9 +42,7 @@ const productSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
-    images: {
-      type: Array,
-    },
+    images: [],
     color: {
       type: String,
       enum: ["black", "white", "red", "green", "yellow", "blue"],
@@ -52,12 +50,17 @@ const productSchema = new mongoose.Schema(
     ratings: [
       {
         star: Number,
+        comment: String,
         postedBy: {
           type: mongoose.Schema.Types.ObjectId,
-          ref: "Rating",
+          ref: "User",
         },
       },
     ],
+    totalRatings: {
+        type: String,
+        default: 0,
+    },
   },
   { timestamps: true }
 );
