@@ -2,6 +2,7 @@ import Product from "../models/productModel.js";
 import asyncHandler from "express-async-handler";
 import { validateMongoDbId } from "../utils/validateMongoDbId.js";
 import { cloudinaryUploadImg } from '../utils/cloudinary.js';
+import * as fs from 'fs';
 
 //create a product
 export const createProduct = asyncHandler(async (req, res, next) => {
@@ -189,6 +190,8 @@ export const ratings = asyncHandler(async (req, res) => {
   }
 });
 
+
+//Upload images
 export const uploadImages = asyncHandler(async (req, res) => {
   const { id } = req.params;
   validateMongoDbId(id);
@@ -202,6 +205,7 @@ export const uploadImages = asyncHandler(async (req, res) => {
       const newPath = await uploader(path);
       console.log('NEW :',newPath);
       urls.push(newPath);
+      fs.unlinkSync(path)
     }
 
     const findProduct = await Product?.findByIdAndUpdate(id, {

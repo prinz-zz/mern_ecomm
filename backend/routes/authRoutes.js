@@ -10,20 +10,28 @@ import {
   deleteUser,
   updatePassword,
   forgotPasswordToken,
-  resetPassword
+  resetPassword,
+  adminLogin,
+  getWishlist,
+  saveUserAddress
 } from "../controller/userController.js";
 import { verifyToken, checkIsAdmin } from "../middlewares/verifyToken.js";
 
 router.post("/register", registerUser);
 router.post("/login", userLogin);
+router.post("/loginAdmin", adminLogin);
 router.post("/forgotPassword", forgotPasswordToken);
 router.post("/resetPassword", resetPassword);
+
 router.get("/getAll", verifyToken, checkIsAdmin, getAllUsers);
+router.get("/wishlist", verifyToken, getWishlist);
 router.get("/:id", verifyToken, getUser);
 router.post("/logout", logout);
 router.patch("/:id", verifyToken, checkIsAdmin, updateUser);
 router.delete("/:id", verifyToken, checkIsAdmin, deleteUser);
 router.patch("/password", verifyToken,  updatePassword);
+router.put("/address", verifyToken,  saveUserAddress);
+
 
 
 export default router;

@@ -8,6 +8,8 @@ import productRoutes from "./routes/productRoutes.js";
 import catRoutes from "./routes/categoryRoutes.js";
 import brandRoutes from "./routes/brandRoutes.js";
 import couponRoutes from "./routes/couponRoutes.js";
+import orderRoutes from "./routes/orderRoutes.js";
+import cartRoutes from "./routes/cartRoutes.js";
 import { notFound, errorHandler } from "./middlewares/errorHandler.js";
 import cookieParser from "cookie-parser";
 
@@ -26,6 +28,8 @@ app.use("/api/product", productRoutes);
 app.use("/api/category", catRoutes);
 app.use("/api/brand", brandRoutes);
 app.use("/api/coupon", couponRoutes);
+app.use("/api/order", orderRoutes);
+app.use("/api/cart", cartRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
