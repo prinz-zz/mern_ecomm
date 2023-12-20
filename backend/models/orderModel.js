@@ -12,13 +12,13 @@ const orderSchema = new mongoose.Schema(
           type: Number,
         },
         color: {
-          type: "string",
+          type: String,
         },
       },
     ],
     paymentIntent: {},
     orderStatus: {
-      type: string,
+      type: String,
       default: "Not processed",
       enum: [
         "Processing",
