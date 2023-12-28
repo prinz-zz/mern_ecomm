@@ -49,7 +49,7 @@ export default function HeaderTop(){
             <div className="col-5">
               <div className="header-upper-links d-flex align-items-center justify-content-between text-white">
                 <div>
-                  <Link className="d-flex align-items-center gap-2 text-white">
+                  <Link to='/compare' className="d-flex align-items-center gap-2 text-white">
                     <img className="" alt="" src="/images/compare.svg" />
                     <p className="mb-0">
                       Compare
@@ -58,7 +58,7 @@ export default function HeaderTop(){
                   </Link>
                 </div>
                 <div>
-                  <Link className="d-flex align-items-center gap-2 text-white">
+                  <Link to='/wishlist' className="d-flex align-items-center gap-2 text-white">
                     <img className="" alt="" src="/images/wishlist.svg" />
                     <p className="mb-0">
                       Favourite
@@ -67,7 +67,7 @@ export default function HeaderTop(){
                   </Link>
                 </div>
                 <div>
-                  <Link className="d-flex align-items-center gap-2 text-white">
+                  <Link to='/login' className="d-flex align-items-center gap-2 text-white">
                     <img className="" alt="" src="/images/user.svg" />
                     <p className="mb-0">
                       Log in
@@ -76,7 +76,7 @@ export default function HeaderTop(){
                   </Link>
                 </div>
                 <div>
-                  <Link className="d-flex align-items-center gap-2 text-white">
+                  <Link to='/cart' className="d-flex align-items-center gap-2 text-white">
                     <img className="" alt="" src="/images/cart.svg" />
                     <div className="d-flex flex-column">
                       <span className="badge bg-white text-dark">0</span>

@@ -38,7 +38,7 @@ export default function Menu() {
             <Link className="py-2 text-white opacity-75" to="/">Home</Link>
             <Link className="py-2 text-white opacity-75" to="/about">About</Link>
             <Link className="py-2 text-white opacity-75" to="/store">Our Store</Link>
-            <Link className="py-2 text-white opacity-75" href="/contact">Contact</Link>
+            <Link className="py-2 text-white opacity-75" to="/contact">Contact</Link>
             
           </Nav>
           
