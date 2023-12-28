@@ -42,7 +42,7 @@ export default function Login() {
                       aria-describedby="emailHelp"
                     />
                   </div>
-                  <Link to="/" className="forgot">Forget password?</Link>
+                  <Link to="/forgot" className="forgot">Forget password?</Link>
                   <div className="d-flex justify-content-center gap-3 mb30">
                     <button type="submit" className="btn btn-primary">
                       Login

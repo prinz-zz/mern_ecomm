@@ -1,9 +1,9 @@
 import Meta from "../components/Meta";
 import { Link } from "react-router-dom";
 
-export default function Signup(){
-    return(
-        <>
+export default function Signup() {
+  return (
+    <>
       <Meta title={"Login"} />
       <div className="bread-crumbs py-3 header-upper">
         <div className="container-xxl">
@@ -26,6 +26,24 @@ export default function Signup(){
                 <form>
                   <div className="mb-3">
                     <input
+                      type="text"
+                      className="form-control"
+                      id="email"
+                      placeholder="First name"
+                      aria-describedby="emailHelp"
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="email"
+                      placeholder="Last name"
+                      aria-describedby="emailHelp"
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <input
                       type="email"
                       className="form-control"
                       id="email"
@@ -42,21 +60,21 @@ export default function Signup(){
                       aria-describedby="emailHelp"
                     />
                   </div>
-                
+
                   <div className="d-flex justify-content-center gap-3 mb30">
                     <button type="submit" className="btn btn-primary">
                       Sign up
                     </button>
                   </div>
                   <div className="signUp">
-                  <div className="strike">
-                    <h6>Already have an account?</h6>
-                  </div>
-                  <div className="text-center">
-                    <Link to="/" className="btn btn-primary ">
-                      Login
-                    </Link>
-                  </div>
+                    <div className="strike">
+                      <h6>Already have an account?</h6>
+                    </div>
+                    <div className="text-center">
+                      <Link to="/login" className="btn btn-primary ">
+                        Login
+                      </Link>
+                    </div>
                   </div>
                 </form>
               </div>
@@ -65,5 +83,5 @@ export default function Signup(){
         </div>
       </div>
     </>
-    )
+  );
 }

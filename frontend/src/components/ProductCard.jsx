@@ -11,7 +11,7 @@ export default function ProductCard({grid}) {
 
   return (
     <div className={`${location.pathname == "/store" ? `gr-${grid} stores` : "col-3"}`}>
-      <div className="card position-relative">
+      <Link to="product/:id" className="card position-relative">
         <div className="productImg">
           <img src="images/tab1.jpg" className="img-fluid" alt="..." />
           <img src="images/tab.jpg" className="img-fluid" alt="..." />
@@ -39,7 +39,7 @@ export default function ProductCard({grid}) {
           </p>
           <div className="wishlist-icon position-absolute">
             <Link>
-              <img src="images/wish.svg" alt="" />
+              <img src="images/wish.svg" alt="" onClick={()=> alert('Hello')}/>
             </Link>
           </div>
           <div className="action-bar position-absolute">
@@ -56,7 +56,7 @@ export default function ProductCard({grid}) {
             </div>
           </div>
         </div>
-      </div>
+      </Link>
     </div>
   );
 }
