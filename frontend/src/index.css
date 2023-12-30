@@ -426,7 +426,31 @@ p {
   color: #767676;
 }
 .single-product-wrapper{
-  background-color: #fff;
+  background-color: var(--sectionBg2);
   padding: 20px 10px;
   border-radius: 10px;
+}
+.single-reviws {
+  border-bottom: 1px solid #ddd;
+}
+.single-reviws a{
+  color:#767676;
+}
+.star-text {
+  color:#767676;
+  line-height:35px;
+}
+.review-text {
+  color:#767676;
+}
+.product-image {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+.product-image > div {
+  border: 1px solid #ddd;
+}
+.product-image > div > img {
+  object-fit: cover;
 }

@@ -11,7 +11,7 @@ export default function ProductCard({grid}) {
 
   return (
     <div className={`${location.pathname == "/store" ? `gr-${grid} stores` : "col-3"}`}>
-      <Link to="product/:id" className="card position-relative">
+      <Link to="/:id" className="card position-relative">
         <div className="productImg">
           <img src="images/tab1.jpg" className="img-fluid" alt="..." />
           <img src="images/tab.jpg" className="img-fluid" alt="..." />

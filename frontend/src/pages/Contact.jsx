@@ -28,6 +28,7 @@ export default function Contact() {
             <div className="contact d-flex justify-content-between py-5 gap-5">
               <div className="col-6">
                 <h3 className="contact-title">Contact</h3>
+                <form>
                 <div className="mb-3">
                   <input
                     type="text"
@@ -62,6 +63,7 @@ export default function Contact() {
                 <button type="button" className="btn btn-dark">
                   Send
                 </button>
+                </form>
               </div>
               <div className="col-6">
                 <h3 className="contact-title">Get in touch with us</h3>
